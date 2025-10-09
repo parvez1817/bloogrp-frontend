@@ -5,10 +5,10 @@ import { Brain, Target, Users, Award } from "lucide-react";
 
 const About = () => {
   const stats = [
-    { label: "Accuracy Rate", value: "94.5%", icon: Target },
-    { label: "Processed Images", value: "50,000+", icon: Users },
-    { label: "AI Models", value: "3+", icon: Brain },
-    { label: "Research Years", value: "5+", icon: Award },
+    { label: "Accuracy Rate", value: "89.99%", icon: Target },
+    { label: "Processed Images", value: "2000+", icon: Users },
+    { label: "AI Models", value: "2+", icon: Brain },
+    { label: "Research Years", value: "2+", icon: Award },
   ];
 
   const technologies = [
@@ -23,16 +23,16 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-enter">
       <Navigation />
       
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-16 card-enter">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-glow">
             About Our <span className="text-primary">Technology</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto stagger-1 card-enter">
             Revolutionary AI-powered blood group prediction using advanced fingerprint analysis
           </p>
         </div>
@@ -40,8 +40,11 @@ const About = () => {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
-            <Card key={index} className="medical-card p-6 text-center">
-              <stat.icon className="h-8 w-8 text-primary mx-auto mb-3" />
+            <Card 
+              key={index} 
+              className={`medical-card p-6 text-center hover-lift theme-transition card-enter stagger-${index + 1}`}
+            >
+              <stat.icon className="h-8 w-8 text-primary mx-auto mb-3 transition-transform duration-300 hover:scale-110" />
               <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </Card>

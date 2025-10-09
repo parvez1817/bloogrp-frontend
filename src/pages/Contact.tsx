@@ -16,6 +16,7 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPartnership, setShowPartnership] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -61,20 +62,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "support@bloodgroupai.com",
+      content: "fingroop@gmail.com",
       description: "Send us an email anytime"
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (555) 123-4567",
+      content: "+91 8248518232",
       description: "Mon-Fri from 8am to 6pm"
     },
     {
       icon: MapPin,
       title: "Address",
-      content: "123 AI Research Blvd",
-      description: "San Francisco, CA 94102"
+      content: "Salem, TamilNadu",
+      description: "Govindhan Street, Hasthampatti"
     },
     {
       icon: MessageSquare,
@@ -85,16 +86,16 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-enter">
       <Navigation />
       
       <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+        <div className="text-center mb-16 card-enter">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 hover-glow">
             Get in <span className="text-primary">Touch</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto stagger-1 card-enter">
             Have questions about our AI blood group prediction technology? 
             We'd love to hear from you and help with your inquiries.
           </p>
@@ -103,8 +104,11 @@ const Contact = () => {
         {/* Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {contactInfo.map((info, index) => (
-            <Card key={index} className="medical-card p-6 text-center">
-              <info.icon className="h-10 w-10 text-primary mx-auto mb-4" />
+            <Card 
+              key={index} 
+              className={`medical-card p-6 text-center hover-lift theme-transition card-enter stagger-${index + 1}`}
+            >
+              <info.icon className="h-10 w-10 text-primary mx-auto mb-4 transition-transform duration-300 hover:scale-110" />
               <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
               <p className="font-medium text-foreground mb-1">{info.content}</p>
               <p className="text-sm text-muted-foreground">{info.description}</p>
@@ -115,7 +119,7 @@ const Contact = () => {
         {/* Contact Form and Info */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="medical-card p-8">
+          <Card className="medical-card p-8 hover-lift theme-transition card-enter">
             <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -193,7 +197,7 @@ const Contact = () => {
                     How accurate is the blood group prediction?
                   </h3>
                   <p className="text-muted-foreground text-sm">
-                    Our AI model achieves over 94% accuracy on our test dataset. However, 
+                    Our AI model achieves over 89.99% accuracy on our test dataset. However, 
                     this should be used for research purposes and not replace medical testing.
                   </p>
                 </div>
@@ -224,12 +228,22 @@ const Contact = () => {
                 We welcome collaboration with researchers, healthcare institutions, 
                 and technology partners interested in advancing AI applications in medicine.
               </p>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                onClick={() => setShowPartnership(!showPartnership)}
               >
                 Learn About Partnerships
               </Button>
+              <div
+                className={`mt-4 overflow-hidden transition-all duration-500 ease-in-out ${
+                  showPartnership ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <p className="text-muted-foreground text-sm">
+                  We are excited to collaborate with researchers, healthcare institutions, and technology partners to advance AI applications in medicine. Please reach out to discuss partnership opportunities, joint research projects, and technology integration.
+                </p>
+              </div>
             </Card>
           </div>
         </div>

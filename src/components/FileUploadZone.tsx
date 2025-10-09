@@ -147,11 +147,11 @@ const FileUploadZone = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto space-y-6">
+    <div className="w-full max-w-2xl mx-auto space-y-6 theme-transition">
       {/* Upload Zone */}
-      <Card className="medical-card p-8">
+      <Card className="medical-card p-8 hover-lift theme-transition card-enter">
         <div
-          className={`upload-zone ${isDragOver ? 'dragover' : ''}`}
+          className={`upload-zone ${isDragOver ? 'dragover' : ''} theme-transition`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
@@ -193,7 +193,7 @@ const FileUploadZone = () => {
                 {selectedFile.name} ({(selectedFile.size / 1024 / 1024).toFixed(2)} MB)
               </div>
               {previewUrl && (
-                <div className="mt-4">
+                <div className="mt-4 card-enter">
                   <img
                     src={previewUrl}
                     alt="Preview"
@@ -218,7 +218,7 @@ const FileUploadZone = () => {
         <Button
           onClick={handlePredict}
           disabled={isProcessing}
-          className="predict-button w-full text-lg py-6 text-primary-foreground"
+          className="predict-button w-full text-lg py-6 text-primary-foreground theme-transition"
         >
           {isProcessing ? "Analyzing Fingerprint..." : "Predict Blood Group"}
         </Button>
@@ -226,7 +226,7 @@ const FileUploadZone = () => {
 
       {/* Results */}
       {result && (
-        <Card className="medical-card p-6">
+        <Card className="medical-card p-6 hover-lift theme-transition card-enter">
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center space-x-2 text-green-600">
               <CheckCircle className="h-6 w-6" />
