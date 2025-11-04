@@ -1,3 +1,7 @@
+# =====================================
+# 🌐 FRONTEND (Vite / React)
+# =====================================
+
 # Logs
 logs
 *.log
@@ -7,19 +11,50 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node modules and builds
+node_modules/
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
+# =====================================
+# 🐍 BACKEND (Flask / Python)
+# =====================================
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+flask-backend/
+
+
+# Model cache (optional if large)
+*.h5
+*.pkl
+
+# =====================================
+# ⚙️ ENVIRONMENTS & SYSTEM FILES
+# =====================================
+
+# Environment files
+.env
+
+# OS / Editor
+.DS_Store
+.idea/
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
+
+# =====================================
+# 🚀 DEPLOYMENT
+# =====================================
+
+.vercel/
+.render/
