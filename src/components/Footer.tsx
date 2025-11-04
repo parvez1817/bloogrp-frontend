@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           <div className="flex space-x-6">
             <a
-              href="https://www.instagram.com/invites/contact/?igsh=brqt286xzhnv&utm_content=odyac1x"
+              href="https://www.instagram.com/stringer_.xo._"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-primary transition-colors duration-200"
@@ -16,7 +16,7 @@ const Footer = () => {
               <Instagram size={28} />
             </a>
             <a
-              href="https://www.facebook.com/share/1A7HZjvPAE/"
+              href="https://www.facebook.com/share/1FmnugfjYS/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-primary transition-colors duration-200"
@@ -25,7 +25,7 @@ const Footer = () => {
               <Facebook size={28} />
             </a>
             <a
-              href="https://www.linkedin.com/in/parvez-ahamed-953717309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/parvez-ahamed-953717309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-primary transition-colors duration-200"
